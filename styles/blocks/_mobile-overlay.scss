@@ -1,0 +1,49 @@
+.mobile-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  border: none;
+  padding: 30px 20px;
+
+  &:modal {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__close-button-wrapper {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__list {
+    @include flex-center;
+    flex-direction: column;
+    row-gap: 10px;
+    min-height: 80vh;
+  }
+
+  &__item {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    @include flex-center(true);
+    color: var(--color-light);
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__soc1als {
+    position: static;
+    color: var(--color-light);
+  }
+}

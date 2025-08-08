@@ -1,0 +1,95 @@
+.footer {
+  --footerOffsetBottom: 120px;
+
+  padding-bottom: var(--footerOffsetBottom);
+
+  @include tablet {
+    --footerOffsetBottom: 70px;
+  }
+
+  @include mobile {
+    --footerOffsetBottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      row-gap: 40px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    margin-bottom: 24px;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__description {
+    font-weight: 600;
+    line-height: 1.77;
+    max-width: 303px;
+
+    @include mobile {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__copyright {
+    font-weight: 500;
+    margin-top: auto;
+    opacity: 0.5;
+  }
+
+  &__site-map {
+    width: 100%;
+    max-width: 566px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 25px;
+
+    @include desktop {
+      max-width: 500px;
+    }
+
+    @include tablet {
+      max-width: 350px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    &-title {
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    &-link {
+      width: 100%;
+      font-weight: 500;
+      line-height: 1.77;
+
+      @include hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}

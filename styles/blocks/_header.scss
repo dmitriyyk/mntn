@@ -1,0 +1,52 @@
+.header {
+  --headerElementPaddingBlock: 10px;
+  --headerOffsetTop: 54px;
+
+  position: fixed;
+  z-index: 90;
+  top: var(--headerOffsetTop);
+  left: 0;
+  width: 100%;
+  font-weight: 600;
+
+  @include mobile {
+    --headerOffsetTop: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    padding-block: var(--headerElementPaddingBlock);
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      column-gap: 40px;
+    }
+
+    &-link {
+      padding-block: var(--headerElementPaddingBlock);
+
+      @include hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__account-button {
+    padding-block: var(--headerElementPaddingBlock);
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}

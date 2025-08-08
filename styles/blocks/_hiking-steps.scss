@@ -1,0 +1,176 @@
+.hiking-steps {
+  --hikingStepsMarginBottom: 200px;
+  --hikingStepsElementMarginBottom: 27px;
+  --counterContent: counter(step);
+
+  margin-top: -135px;
+  margin-bottom: var(--hikingStepsMarginBottom);
+  overflow-x: clip;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--hikingStepsMarginBottom);
+    list-style-type: none;
+    counter-reset: step;
+
+    @include tablet {
+      --hikingStepsMarginBottom: 150px;
+    }
+  }
+
+  &__item {
+    --hikingStepsItemPaddingLeft: 150px;
+
+    counter-increment: step;
+
+    &:nth-child(-n + 9) {
+      --counterContent: '0' counter(step);
+    }
+
+    scroll-margin-top: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 25px;
+    padding-left: var(--hikingStepsItemPaddingLeft);
+    width: 100%;
+
+    @include desktop {
+      --hikingStepsItemPaddingLeft: 100px;
+    }
+
+    @include tablet {
+      --hikingStepsItemPaddingLeft: 0;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    &--reverse {
+      --hikingStepsItemPaddingLeft: 0;
+      flex-direction: row-reverse;
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__body {
+    --hikingStepsBodyMaxWidth: 632px;
+    --hikingStepsBodyCounterOffsetLeft: -153px;
+
+    position: relative;
+    max-width: var(--hikingStepsBodyMaxWidth);
+
+    @include mobile {
+      display: contents;
+    }
+
+    &::before {
+      @include square(240px);
+      content: var(--counterContent);
+      position: absolute;
+      top: -128px;
+      left: var(--hikingStepsBodyCounterOffsetLeft);
+      font-size: 240px;
+      font-weight: 600;
+      opacity: 0.1;
+      z-index: 1;
+
+      @include desktop {
+        --hikingStepsBodyCounterOffsetLeft: -19px;
+      }
+    }
+
+    @include mobile {
+      --hikingStepsBodyMaxWidth: 100%;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: var(--hikingStepsElementMarginBottom);
+
+    @include mobile {
+      order: -3;
+    }
+  }
+
+  &__title {
+    font-family: "Chronicle Display", sans-serif;
+    max-width: 555px;
+    margin-bottom: var(--hikingStepsElementMarginBottom);
+
+    @include mobile {
+      order: -2;
+    }
+  }
+
+  &__description {
+    line-height: 1.77;
+    font-weight: 600;
+    margin-bottom: 17px;
+  }
+
+  &__link {
+    font-weight: 600;
+    padding-block: 10px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 16px;
+    color: var(--color-accent);
+
+    @include hover {
+      color: var(--color-light);
+    }
+
+    &-icon-wrapper {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    max-height: 720px;
+    height: auto;
+
+    @include tablet {
+      max-height: 620px;
+    }
+
+    @include mobile {
+      order: -1;
+      width: 100%;
+      margin-bottom: var(--hikingStepsElementMarginBottom);
+    }
+
+    &-wrapper {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 566px;
+      height: auto;
+
+      @include desktop {
+        max-width: 466px;
+      }
+
+      @include tablet {
+        width: 320px;
+      }
+
+      @include mobile {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

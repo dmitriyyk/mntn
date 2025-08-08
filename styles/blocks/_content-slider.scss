@@ -1,0 +1,38 @@
+.content-slider {
+  --contentSliderOffsetRight: 70px;
+
+  position: fixed;
+  right: var(--contentSliderOffsetRight);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+
+  @include desktop {
+    --contentSliderOffsetRight: 30px;
+  }
+
+  &__item {
+    padding-right: 32px;
+    border-right: 3px solid #FFFFFF7F;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    transition-duration: var(--transition-duration);
+
+    &--active {
+      border-color: var(--color-light);
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    padding-block: 20px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: right;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}

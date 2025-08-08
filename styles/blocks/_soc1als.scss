@@ -1,0 +1,55 @@
+.soc1als {
+  --soc1alsOffsetLeft: 55px;
+  --soc1alsWritingMode: vertical-rl;
+  --soc1alsFlexDirection: column;
+  --soc1alsListAlignItems: start;
+  --soc1alsGap: 14px 0;
+
+  position: fixed;
+  left: var(--soc1alsOffsetLeft);
+  top: 47.5%;
+  transform: translateY(-50%);
+  z-index: 100;
+
+  display: flex;
+  flex-direction: var(--soc1alsFlexDirection);
+  justify-content: center;
+  gap: var(--soc1alsGap);
+
+  &--horizontal {
+    --soc1alsWritingMode: horizontal;
+    --soc1alsFlexDirection: row;
+    --soc1alsGap: 0 14px;
+  }
+
+  @include desktop {
+    --soc1alsOffsetLeft: 30px;
+  }
+
+  &-label {
+    writing-mode: var(--soc1alsWritingMode);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: var(--soc1alsFlexDirection);
+    align-items: var(--soc1alsListAlignItems);
+    gap: var(--soc1alsGap);
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &-link {
+    padding: 5px;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}

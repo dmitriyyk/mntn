@@ -1,0 +1,52 @@
+body {
+  @include fluid-text(18, 16);
+
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--color-light);
+  background-color: #0B1D26;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a,
+button,
+input,
+textarea {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 3px dotted var(--color-accent);;
+    outline-offset: 3px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
+h1, .h1 {
+  @include fluid-text(88, 35)
+}
+
+h2, .h2 {
+  @include fluid-text(64, 30)
+}
+
+h3, .h3 {
+  @include fluid-text(24, 20)
+}

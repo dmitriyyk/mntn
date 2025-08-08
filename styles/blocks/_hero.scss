@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+
+  background-image: url("/images/hero-bg.jpg");
+  background-image: -webkit-image-set(
+                  url("/images/hero-bg.avif") type("image/avif") 1x,
+                  url("/images/hero-bg.webp") type("image/webp") 1x
+  );
+  background-image: image-set(
+                  url("/images/hero-bg.avif") type("image/avif") 1x,
+                  url("/images/hero-bg.webp") type("image/webp") 1x
+  );
+
+  background-position: center top;
+  background-size: auto;
+  background-repeat: no-repeat;
+
+  @include tablet {
+    background-position: -420px top;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -206px;
+    height: 700px;
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 72.28%);
+  }
+
+  &__content {
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    z-index: 20;
+    margin: 0 auto;
+
+    @include desktop {
+      max-width: 750px;
+    }
+
+    @include tablet {
+      max-width: 620px;
+    }
+  }
+
+  &__inner {
+    padding-top: 262px;
+    min-height: 1586px;
+  }
+
+  &__section-title {
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-family: 'Chronicle Display', sans-serif;
+    line-height: 1.14;
+    margin-bottom: 22px;
+  }
+
+  &__link {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 16px;
+    padding-block: 10px;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    &-icon-wrapper {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}

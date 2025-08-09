@@ -1,7 +1,7 @@
 .hero {
   position: relative;
 
-  background-image: url("/images/hero-bg.jpg");
+  background-image: url("../../../mntn/images/hero-bg.jpg");
   background-image: -webkit-image-set(
                   url("../../../mntn/images/hero-bg.avif") type("image/avif") 1x,
                   url("../../../mntn/images/hero-bg.webp") type("image/webp") 1x
@@ -47,8 +47,14 @@
   }
 
   &__inner {
-    padding-top: 262px;
+    --heroInnerOffsetTop: 262px;
+
+    padding-top: var(--heroInnerOffsetTop);
     min-height: 1586px;
+
+    @include tablet {
+      --heroInnerOffsetTop: 230px;
+    }
   }
 
   &__section-title {

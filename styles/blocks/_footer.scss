@@ -56,7 +56,7 @@
     max-width: 566px;
     display: flex;
     justify-content: space-between;
-    column-gap: 25px;
+    column-gap: 30px;
 
     @include desktop {
       max-width: 500px;
@@ -86,6 +86,7 @@
       width: 100%;
       font-weight: 500;
       line-height: 1.77;
+      @include fluid-text(18, 15);
 
       @include hover {
         color: var(--color-accent);

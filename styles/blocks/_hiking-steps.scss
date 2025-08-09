@@ -7,16 +7,16 @@
   margin-bottom: var(--hikingStepsMarginBottom);
   overflow-x: clip;
 
+  @include tablet {
+    --hikingStepsMarginBottom: 150px;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
     row-gap: var(--hikingStepsMarginBottom);
     list-style-type: none;
     counter-reset: step;
-
-    @include tablet {
-      --hikingStepsMarginBottom: 150px;
-    }
   }
 
   &__item {

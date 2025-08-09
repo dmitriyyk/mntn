@@ -1,9 +1,9 @@
 .mobile-overlay {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  border: none;
   background-color: transparent;
   backdrop-filter: blur(20px);
-  border: none;
   padding: 30px 20px;
 
   &:modal {
@@ -20,7 +20,7 @@
     @include flex-center;
     flex-direction: column;
     row-gap: 10px;
-    min-height: 80vh;
+    min-height: 80dvh;
   }
 
   &__item {

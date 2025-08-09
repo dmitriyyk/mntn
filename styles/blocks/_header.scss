@@ -1,19 +1,35 @@
 .header {
   --headerElementPaddingBlock: 10px;
-  --headerOffsetTop: 54px;
+  --headerOffsetTop: 44px;
+  --headerBackgroundColor: transparent;
 
   position: fixed;
   z-index: 90;
   top: var(--headerOffsetTop);
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   font-weight: 600;
+  transition-duration: var(--transition-duration);
 
   @include mobile {
-    --headerOffsetTop: 30px;
+    --headerOffsetTop: 20px;
+  }
+
+  &--background {
+    --headerBackgroundColor: var(--color-dark);
+    --headerOffsetTop: 24px;
+    width: 98%;
+
+    @include mobile {
+      --headerOffsetTop: 5px;
+    }
   }
 
   &__inner {
+    transition-duration: var(--transition-duration);
+    padding-block: 10px;
+    background-color: var(--headerBackgroundColor);
     display: flex;
     justify-content: space-between;
     align-items: center;

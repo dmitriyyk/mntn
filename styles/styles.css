@@ -235,6 +235,7 @@ svg * {
 :root {
   --color-light: #FFFFFF;
   --color-accent: #FBD784;
+  --color-dark: #0B1D26;
   --font-family-base: "Gilroy", sans-serif;
   --container-width: 1462px;
   --container-width-large: 1760px;
@@ -287,7 +288,7 @@ body {
   font-weight: 400;
   line-height: 1.28;
   color: var(--color-light);
-  background-color: #0B1D26;
+  background-color: var(--color-dark);
 }
 
 a,
@@ -438,10 +439,10 @@ h3, .h3 {
 
 .mobile-overlay {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  border: none;
   background-color: transparent;
   backdrop-filter: blur(20px);
-  border: none;
   padding: 30px 20px;
 }
 .mobile-overlay:modal {
@@ -458,7 +459,7 @@ h3, .h3 {
   align-items: center;
   flex-direction: column;
   row-gap: 10px;
-  min-height: 80vh;
+  min-height: 80dvh;
 }
 .mobile-overlay__item {
   width: 100%;
@@ -548,20 +549,36 @@ h3, .h3 {
 
 .header {
   --headerElementPaddingBlock: 10px;
-  --headerOffsetTop: 54px;
+  --headerOffsetTop: 44px;
+  --headerBackgroundColor: transparent;
   position: fixed;
   z-index: 90;
   top: var(--headerOffsetTop);
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   font-weight: 600;
+  transition-duration: var(--transition-duration);
 }
 @media (max-width: 767px) {
   .header {
-    --headerOffsetTop: 30px;
+    --headerOffsetTop: 20px;
+  }
+}
+.header--background {
+  --headerBackgroundColor: var(--color-dark);
+  --headerOffsetTop: 24px;
+  width: 98%;
+}
+@media (max-width: 767px) {
+  .header--background {
+    --headerOffsetTop: 5px;
   }
 }
 .header__inner {
+  transition-duration: var(--transition-duration);
+  padding-block: 10px;
+  background-color: var(--headerBackgroundColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -672,7 +689,7 @@ h3, .h3 {
   max-width: 566px;
   display: flex;
   justify-content: space-between;
-  column-gap: 25px;
+  column-gap: 30px;
 }
 @media (max-width: 1280px) {
   .footer__site-map {
@@ -703,6 +720,7 @@ h3, .h3 {
   width: 100%;
   font-weight: 500;
   line-height: 1.77;
+  font-size: clamp(15px, 18 / 1440 * 100vw, 18px);
 }
 @media (hover: hover) {
   .footer__site-map-link:hover {
@@ -759,7 +777,7 @@ h3, .h3 {
 
 .hero {
   position: relative;
-  background-image: url("/images/hero-bg.jpg");
+  background-image: url("../../../mntn/images/hero-bg.jpg");
   background-image: -webkit-image-set(url("../../../mntn/images/hero-bg.avif") type("image/avif") 1x, url("../../../mntn/images/hero-bg.webp") type("image/webp") 1x);
   background-image: image-set(url("../../../mntn/images/hero-bg.avif") type("image/avif") 1x, url("../../../mntn/images/hero-bg.webp") type("image/webp") 1x);
   background-position: center top;
@@ -799,8 +817,14 @@ h3, .h3 {
   }
 }
 .hero__inner {
-  padding-top: 262px;
+  --heroInnerOffsetTop: 262px;
+  padding-top: var(--heroInnerOffsetTop);
   min-height: 1586px;
+}
+@media (max-width: 1023px) {
+  .hero__inner {
+    --heroInnerOffsetTop: 230px;
+  }
 }
 .hero__section-title {
   margin-bottom: 32px;
@@ -840,17 +864,17 @@ h3, .h3 {
   margin-bottom: var(--hikingStepsMarginBottom);
   overflow-x: clip;
 }
+@media (max-width: 1023px) {
+  .hiking-steps {
+    --hikingStepsMarginBottom: 150px;
+  }
+}
 .hiking-steps__list {
   display: flex;
   flex-direction: column;
   row-gap: var(--hikingStepsMarginBottom);
   list-style-type: none;
   counter-reset: step;
-}
-@media (max-width: 1023px) {
-  .hiking-steps__list {
-    --hikingStepsMarginBottom: 150px;
-  }
 }
 .hiking-steps__item {
   --hikingStepsItemPaddingLeft: 150px;

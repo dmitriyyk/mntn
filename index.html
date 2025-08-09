@@ -7,13 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="MNTN Step-by-step Hiking Guide">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="js/script.js" defer></script>
     <title>MNTN</title>
 </head>
 <body>
-<header class="header">
+<header class="header" data-js-header>
     <div class="header__inner container container--large">
-        <a class="header__logo logo" href="#" aria-label="Home page" title="To home page">
+        <a class="header__logo logo" href="#" aria-label="Home page"
+           title="To home page">
             <svg width="108" height="24" viewBox="0 0 108 24" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1_71)">
@@ -67,7 +69,7 @@
             <span class="account-button__label">Account</span>
         </a>
         <button class="header__menu-button burger-button visible-mobile"
-                type="button" data-js-show-mobile-menu-button>
+                type="button" data-js-show-mobile-overlay-button>
             <span class="visually-hidden">
                 Open navigation menu
             </span>
@@ -118,11 +120,11 @@
                 </a>
             </div>
         </div>
-        <div class="hero__bg-layer"></div>
     </section>
     <section class="hiking-steps container">
         <ol class="hiking-steps__list">
-            <li class="hiking-steps__item" id="content-1" data-js-content="content-1">
+            <li class="hiking-steps__item" id="content-1"
+                data-js-content="content-1">
                 <div class="hiking-steps__body">
                     <span class="hiking-steps__section-title section-title">Get Started</span>
                     <h2 class="hiking-steps__title">What level of hiker are
@@ -148,9 +150,14 @@
                     </a>
                 </div>
                 <picture class="hiking-steps__image-wrapper">
-                    <source srcset="./images/hiking-steps/1.avif" type="image/avif">
-                    <source srcset="./images/hiking-steps/1.webp" type="image/webp">
-                    <img class="hiking-steps__image" src="./images/hiking-steps/1.jpg" width="566" height="720" alt="A tourist walks along a path on a mountain">
+                    <source srcset="./images/hiking-steps/1.avif"
+                            type="image/avif">
+                    <source srcset="./images/hiking-steps/1.webp"
+                            type="image/webp">
+                    <img class="hiking-steps__image"
+                         src="./images/hiking-steps/1.jpg" width="566"
+                         height="720"
+                         alt="A tourist walks along a path on a mountain">
                 </picture>
             </li>
             <li class="hiking-steps__item hiking-steps__item--reverse"
@@ -180,12 +187,18 @@
                     </a>
                 </div>
                 <picture class="hiking-steps__image-wrapper">
-                    <source srcset="./images/hiking-steps/2.avif" type="image/avif">
-                    <source srcset="./images/hiking-steps/2.webp" type="image/webp">
-                    <img class="hiking-steps__image" src="./images/hiking-steps/2.jpg" width="566" height="720" alt="A tourist stands near a cliff and looks at the mountain views">
+                    <source srcset="./images/hiking-steps/2.avif"
+                            type="image/avif">
+                    <source srcset="./images/hiking-steps/2.webp"
+                            type="image/webp">
+                    <img class="hiking-steps__image"
+                         src="./images/hiking-steps/2.jpg" width="566"
+                         height="720"
+                         alt="A tourist stands near a cliff and looks at the mountain views">
                 </picture>
             </li>
-            <li class="hiking-steps__item" id="content-3" data-js-content="content-3">
+            <li class="hiking-steps__item" id="content-3"
+                data-js-content="content-3">
                 <div class="hiking-steps__body">
                     <span class="hiking-steps__section-title section-title">Where you go is the key</span>
                     <h2 class="hiking-steps__title">Understand Your Map &
@@ -211,9 +224,14 @@
                     </a>
                 </div>
                 <picture class="hiking-steps__image-wrapper">
-                    <source srcset="./images/hiking-steps/3.avif" type="image/avif">
-                    <source srcset="./images/hiking-steps/3.webp" type="image/webp">
-                    <img class="hiking-steps__image" src="./images/hiking-steps/3.jpg" width="566" height="720" alt="A tourist holds a compass in his hand while on a mountain">
+                    <source srcset="./images/hiking-steps/3.avif"
+                            type="image/avif">
+                    <source srcset="./images/hiking-steps/3.webp"
+                            type="image/webp">
+                    <img class="hiking-steps__image"
+                         src="./images/hiking-steps/3.jpg" width="566"
+                         height="720"
+                         alt="A tourist holds a compass in his hand while on a mountain">
                 </picture>
             </li>
         </ol>
@@ -222,7 +240,8 @@
 <footer class="footer">
     <div class="footer__inner container">
         <div class="footer__info">
-            <a class="footer__logo logo" href="#" aria-label="Home page" title="To home page">
+            <a class="footer__logo logo" href="#" aria-label="Home page"
+               title="To home page">
                 <svg width="108" height="24" viewBox="0 0 108 24" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1_72)">
@@ -294,26 +313,30 @@
         <li class="content-slider__item" data-js-content-slider-item="start">
             <a href="#start" class="content-slider__link">Start</a>
         </li>
-        <li class="content-slider__item" data-js-content-slider-item="content-1">
+        <li class="content-slider__item"
+            data-js-content-slider-item="content-1">
             <a href="#content-1" class="content-slider__link">01</a>
         </li>
-        <li class="content-slider__item" data-js-content-slider-item="content-2">
+        <li class="content-slider__item"
+            data-js-content-slider-item="content-2">
             <a href="#content-2" class="content-slider__link">02</a>
         </li>
-        <li class="content-slider__item" data-js-content-slider-item="content-3">
+        <li class="content-slider__item"
+            data-js-content-slider-item="content-3">
             <a href="#content-3" class="content-slider__link">03</a>
         </li>
     </ul>
 </aside>
 
-<dialog class="mobile-overlay visible-mobile" id="mobileMenu">
+<dialog class="mobile-overlay visible-mobile" data-js-mobile-overlay>
     <form class="mobile-overlay__close-button-wrapper" method="dialog">
-        <button class="mobile-overlay__close-button cross-button" data-js-hide-mobile-menu-button>
+        <button class="mobile-overlay__close-button cross-button"
+                data-js-hide-mobile-overlay-button>
             <span class="visually-hidden">Close navigation menu</span>
         </button>
     </form>
     <div class="mobile-overlay__body">
-        <ul class="mobile-overlay__list">
+        <ul class="mobile-overlay__list" data-js-mobile-overlay-list>
             <li class="mobile-overlay__item">
                 <a class="mobile-overlay__link account-button" href="#">
             <span class="account-button__icon-wrapper">

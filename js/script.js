@@ -1,21 +1,42 @@
-const showMobileMenuButtonElement = document.querySelector('[data-js-show-mobile-menu-button]')
-const hideMobileMenuButtonElement = document.querySelector('[data-js-hide-mobile-menu-button]')
+const headerElement = document.querySelector('[data-js-header]')
+
+const showMobileOverlayButtonElement = document.querySelector('[data-js-show-mobile-overlay-button]')
+const hideMobileOverlayButtonElement = document.querySelector('[data-js-hide-mobile-overlay-button]')
+const mobileOverlayElement = document.querySelector('[data-js-mobile-overlay]')
+const mobileOverlayListElement = document.querySelector('[data-js-mobile-overlay-list]')
 
 const contentListElements = document.querySelectorAll('[data-js-content]')
 const contentSliderListElements = document.querySelectorAll('[data-js-content-slider-item]')
 
-const showMobileMenu = () => {
+const toggleHeaderBackgroundOnScroll = () => {
+  const scrollTopPos = window.scrollY;
+
+  if (scrollTopPos >= 120) {
+    headerElement.classList.add('header--background')
+  } else {
+    headerElement.classList.remove('header--background')
+  }
+}
+
+window.addEventListener('scroll', toggleHeaderBackgroundOnScroll)
+
+const showMobileOverlay = () => {
   document.body.classList.add('stop-scroll')
-  mobileMenu.showModal()
+  mobileOverlayElement.showModal()
 }
 
-const hideMobileMenu = () => {
+const hideMobileOverlay = () => {
   document.body.classList.remove('stop-scroll')
-  mobileMenu.close()
+  mobileOverlayElement.close()
 }
 
-showMobileMenuButtonElement.addEventListener('click', showMobileMenu)
-hideMobileMenuButtonElement.addEventListener('click', hideMobileMenu)
+const hideMobileOverlayOnClickOnLink = (e) => {
+  e.target.closest('a') && hideMobileOverlay()
+}
+
+showMobileOverlayButtonElement.addEventListener('click', showMobileOverlay)
+hideMobileOverlayButtonElement.addEventListener('click', hideMobileOverlay)
+mobileOverlayListElement.addEventListener('click', hideMobileOverlayOnClickOnLink)
 
 const observerOptions = {
   root: null,
